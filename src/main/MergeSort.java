@@ -1,4 +1,4 @@
-public class InsertSort implements Interface{
+public class MergeSort implements Interface{
 
     @Override
         public static void mergeSort(int[] lista, int n) {
