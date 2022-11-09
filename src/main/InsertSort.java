@@ -1,7 +1,7 @@
-public class OrdenarInsertSort implements Interface{
+public class InsertSort implements Interface{
 
     @Override
-    public int[] ordenar(int[] lista) {
+    public int[] sort(int[] lista) {
         int j;
         int key;
         int i;
