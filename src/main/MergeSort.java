@@ -1,39 +1,43 @@
-public static void mergeSort(int[] a, int n) {
-    if (n < 2) {
-        return;
-    }
-    int mid = n / 2;
-    int[] l = new int[mid];
-    int[] r = new int[n - mid];
+public class InsertSort implements Interface{
 
-    for (int i = 0; i < mid; i++) {
-        l[i] = a[i];
-    }
-    for (int i = mid; i < n; i++) {
-        r[i - mid] = a[i];
-    }
-    mergeSort(l, mid);
-    mergeSort(r, n - mid);
+    @Override
+        public static void mergeSort(int[] lista, int n) {
+            if (n < 2) {
+                return;
+            }
+            int mid = n / 2;
+            int[] l = new int[mid];
+            int[] r = new int[n - mid];
 
-    merge(a, l, r, mid, n - mid);
-}
+            for (int i = 0; i < mid; i++) {
+                l[i] = lista[i];
+            }
+            for (int i = mid; i < n; i++) {
+                r[i - mid] = lista[i];
+            }
+            mergeSort(l, mid);
+            mergeSort(r, n - mid);
 
-public static void merge(
-  int[] a, int[] l, int[] r, int left, int right) {
- 
-    int i = 0, j = 0, k = 0;
-    while (i < left && j < right) {
-        if (l[i] <= r[j]) {
-            a[k++] = l[i++];
+            merge(lista, l, r, mid, n - mid);
         }
-        else {
-            a[k++] = r[j++];
+
+        public static void merge(
+        int[] lista, int[] l, int[] r, int left, int right) {
+        
+            int i = 0, j = 0, k = 0;
+            while (i < left && j < right) {
+                if (l[i] <= r[j]) {
+                    lista[k++] = l[i++];
+                }
+                else {
+                    lista[k++] = r[j++];
+                }
+            }
+            while (i < left) {
+                lista[k++] = l[i++];
+            }
+            while (j < right) {
+                lista[k++] = r[j++];
+            }
         }
-    }
-    while (i < left) {
-        a[k++] = l[i++];
-    }
-    while (j < right) {
-        a[k++] = r[j++];
-    }
 }
