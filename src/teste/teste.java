@@ -9,7 +9,7 @@ public class TestOrdenacao {
     Opcoes opcoes;
 
     @Test
-    public void positiveTest() {
+    public void testMergeSort() {
     int[] actual = { 5, 1, 6, 2, 3, 4 };
     int[] expected = { 1, 2, 3, 4, 5, 6 };
     MergeSort.mergeSort(actual, actual.length);
